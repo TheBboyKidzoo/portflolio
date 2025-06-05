@@ -1,0 +1,92 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "aside header"
+        "aside main"
+        "aside main";
+    user-select: none;
+    background-color: rgba(30, 30, 30, 0.9);
+    /* Augmentez la valeur de l'opacité (ici 0.9) pour plus d'opacité */
+}
+
+header {
+    grid-area: header;
+    position: relative;
+    right: 8%;
+    bottom: -45%;
+}
+
+main {
+    position: relative;
+    right: 25%;
+    grid-area: main;
+}
+
+#site.moveGrid {
+    position: relative;
+    left: 0;
+    bottom: 50%;
+}
+
+aside {
+    grid-area: aside;
+    background-color: red;
+    width: 600px;
+    height: 800px;
+}
+
+#pub.movePub {
+    position: relative;
+    right: -130%;
+    bottom: 0%;
+}
+
+#pubTitre {
+    font-weight: bold;
+    position: relative;
+    top: 28%;
+    left: -2%;
+    text-align: center;
+}
+
+#fox {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    background-color: gray;
+    border-radius: 7px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding: 25px;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    border: 1px solid whitesmoke;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+    visibility: hidden;
+}
+
+/* 2 classes utilisées pour la validation du mot */
+.correct {
+    color: green;
+}
+
+.present {
+    color: yellow;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grille de jeu</title>
+    <link rel="stylesheet" href="style/wordeul.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/formulaire.css">
+</head>
+
+<body>
+    <header>
+        <h1> Wordeul iter2 </h1>
+    </header>
+    <main id="affichage">
+        <div id="panneauConfig">
+            <h2>Configuration du jeu</h2>
+            <form id="gameForm">
+                <label for="mot_cacher">Mots à deviner</label>
+                <input type="password" id="mot_cacher" name="mot_deviner" readonly>
+                <br>
+                <label for="tentatives">Nombre de tentatives</label>
+                <input type="number" id="tentatives" name="numberTentative" min="1" max="100">
+                <button id="GO" type="submit">GO</button>
+            </form>
+            <section id="game">
+                <!-- La grille est générée automatiquement via la function createGrid-->
+                <!-- REMARQUE : problème rencontrée. Le jeu s'arrete lorsque je ne trouve pas le mots après 5 tentatives. Alors que j'en ai une en plus. REGLER CELA-->
+            </section>
+        </div>
+    </main>
+    <aside id="pub">
+        <h2 id="pubTitre">Publicité</h2>
+        <img id="fox" src="https://www.silicon.fr/wp-content/uploads/2019/10/firefox-70-684x513.jpg" alt="pub">
+    </aside>
+
+
+    <!--La modale de victoire ou défaite-->
+    <div id="modal" class="modal-container">
+        <!--représente le backdrop (fond grisé derrière la modal)-->
+        <div class="overlay modal-triggers"></div>
+        <!--contenue de la modal-->
+        <div class="modal-content">
+            <header>
+                <span id="myBtn" class="closeModalBtn modal-triggers">&times;</span>
+                <p>Résultat</p>
+            </header>
+
+            <main>
+                <span id="modalMessage"></span>
+            </main>
+
+            <footer>
+                <button class="ok modal-triggers">OK</button>
+            </footer>
+        </div>
+    </div>
+    <!-- le fichier script est généralement insérer à la fin du corps (<body>) du document HTML 
+    pour s'assurer que le HTML de la page est chargé avant que le script JavaScript ne soit exécuté, 
+    ce qui est une pratique courante pour éviter les problèmes de modifications de la page avant son affichage-->
+    <script src="js/wordle.js"></script>
+</body>
+
+</html>
